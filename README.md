@@ -63,4 +63,36 @@ If there is no active job running, `stats` shows the stats of the last run job.
 
 ## Unit tests
 
-Run `pytest -v tests` from root directory
+
+#### Step 1: Setup environment
+
+In the root director of the code run -
+```
+$ python3 -m venv venv
+$ source venv/bin/activate
+(venv) $ pip install -r requirements.txt
+(venv) $ pip install pytest
+```
+
+#### Step 2: Run the tests
+```
+(venv) $ pytest -v tests
+```
+Expected output:
+
+```
+=========================================================================================================== test session starts ============================================================================================================
+platform darwin -- Python 3.9.6, pytest-7.3.2, pluggy-1.0.0 -- /Users/kmynam/Downloads/Private/adg/backend/venv/bin/python3                                                                                                                                                                                                                      
+
+tests/test_1_sim_start_param_validation.py::test_sim_start_1 PASSED                                                                                                                                                                  [ 12%]
+tests/test_1_sim_start_param_validation.py::test_sim_start_2 PASSED                                                                                                                                                                  [ 25%]
+tests/test_1_sim_start_param_validation.py::test_sim_start_3 PASSED                                                                                                                                                                  [ 37%]
+tests/test_2_sim_start_job_validate.py::test_sim_status_begin PASSED                                                                                                                                                                 [ 50%]
+tests/test_2_sim_start_job_validate.py::test_sim_start_1 PASSED                                                                                                                                                                      [ 62%]
+tests/test_2_sim_start_job_validate.py::test_sim_start_2 PASSED                                                                                                                                                                      [ 75%]
+tests/test_2_sim_start_job_validate.py::test_sim_status_end PASSED                                                                                                                                                                   [ 87%]
+tests/test_home.py::test_base_route PASSED                                                                                                                                                                                           [100%]
+
+============================================================================================================ 8 passed in 7.41s =============================================================================================================
+
+```
